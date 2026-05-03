@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IPB.Rental</string>
+    <string name="tagline">Kampus berbagi, semua tersedia</string>
+    <string name="ob1_title">Sewa Apa Saja\ndi Kampus IPB 🎓</string>
+    <string name="ob1_desc">Kamera, laptop, alat olahraga, proyektor, dan ratusan item keren dari sesama mahasiswa IPB tersedia untukmu!</string>
+    <string name="ob2_title">Aman &amp;\nTerpercaya 🔒</string>
+    <string name="ob2_desc">Semua pengguna diverifikasi mahasiswa IPB. Deposit tersimpan aman sampai transaksi benar-benar selesai.</string>
+    <string name="ob3_title">Chat, Negosiasi,\ndan Sepakat 💬</string>
+    <string name="ob3_desc">Hubungi pemilik langsung, negosiasi harga, dan selesaikan transaksi dalam satu platform yang mudah.</string>
+</resources>

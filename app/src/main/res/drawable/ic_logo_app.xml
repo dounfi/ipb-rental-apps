@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Simplified vector representation of the "R" logo provided -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,20C55.8,20 20,55.8 20,100s35.8,80 80,80c10.5,0 20.4,-2 29.5,-5.7c-5.4,-3.8 -10.1,-8.6 -13.8,-14.3c-4.9,1.3 -10.1,2 -15.7,2c-34.2,0 -62,-27.8 -62,-62s27.8,-62 62,-62s62,27.8 62,62c0,11.5 -3.1,22.2 -8.6,31.4c8.4,2.3 16,6.4 22.3,11.8c4.1,-13 6.3,-26.8 6.3,-41.2C180,55.8 144.2,20 100,20z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M145,110l-15,-15c-2,-2 -5,-2 -7,0l-5,5l-10,-10c-2,-2 -5,-2 -7,0l-15,15c-2,2 -2,5 0,7l5,5l-10,10c-2,2 -2,5 0,7l15,15c2,2 5,2 7,0l10,-10l5,5c2,2 5,2 7,0l15,-15C147,115 147,112 145,110z M115,130l-5,-5l5,-5l5,5L115,130z" />
+</vector>

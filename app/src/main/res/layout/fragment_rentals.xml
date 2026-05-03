@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F0EB">
+
+    <!-- HEADER (fixed) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp"
+        android:elevation="4dp">
+
+        <!-- ROW TITLE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rental Saya"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1C2B4A"/>
+
+            <ImageButton
+                android:id="@+id/btnChat"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_chat"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                app:tint="#1C2B4A"/>
+
+            <ImageButton
+                android:id="@+id/btnFilter"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_filter"
+                android:background="@drawable/bg_btn_filter"
+                android:padding="8dp"
+                app:tint="#1C2B4A"/>
+
+        </LinearLayout>
+
+        <!-- TOGGLE PENYEWA / PEMILIK -->
+        <LinearLayout
+            android:id="@+id/layoutToggle"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_toggle_container"
+            android:padding="4dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvSebagaiPenyewa"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Sebagai Penyewa"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:background="@drawable/bg_toggle_active"/>
+
+            <TextView
+                android:id="@+id/tvSebagaiPemilik"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Sebagai Pemilik"
+                android:textSize="13sp"
+                android:textColor="#6B7280"
+                android:gravity="center"
+                android:background="@drawable/bg_toggle_inactive"/>
+
+        </LinearLayout>
+
+        <!-- TAB STATUS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tabAktif"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Aktif"
+                android:textSize="13sp"
+                android:textColor="#1C2B4A"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_active"/>
+
+            <TextView
+                android:id="@+id/tabPending"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Pending"
+                android:textSize="13sp"
+                android:textColor="#9CA3AF"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_inactive"/>
+
+            <TextView
+                android:id="@+id/tabSelesai"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Selesai"
+                android:textSize="13sp"
+                android:textColor="#9CA3AF"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_inactive"/>
+
+            <TextView
+                android:id="@+id/tabBatal"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Batal"
+                android:textSize="13sp"
+                android:textColor="#9CA3AF"
+                android:gravity="center"
+                android:background="@drawable/bg_tab_inactive"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- LIST RENTAL -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRentals"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        android:overScrollMode="never"/>
+
+</LinearLayout>

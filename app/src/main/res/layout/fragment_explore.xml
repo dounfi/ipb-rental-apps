@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F6F4">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER TEAL (IPB.Rental + tagline + search bar) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1A7A8A"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IPB.Rental"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temukan item terbaik\nuntuk kebutuhanmu."
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Search Bar -->
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_search_bar"
+                    android:hint="Cari kamera, laptop, proyektor..."
+                    android:textColorHint="#9CA3AF"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="12dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:drawableTint="#9CA3AF"/>
+
+            </LinearLayout>
+
+            <!-- KONTEN PUTIH (chip + grid) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- CHIP KATEGORI -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/chipSemua"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:text="Semua"
+                            android:textSize="14sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/bg_chip_active"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/chipFotografi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:text="Fotografi"
+                            android:textSize="14sp"
+                            android:textColor="#1C2B4A"
+                            android:background="@drawable/bg_chip_inactive"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/chipElektronik"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:text="Elektronik"
+                            android:textSize="14sp"
+                            android:textColor="#1C2B4A"
+                            android:background="@drawable/bg_chip_inactive"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/chipAudio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:text="Audio"
+                            android:textSize="14sp"
+                            android:textColor="#1C2B4A"
+                            android:background="@drawable/bg_chip_inactive"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/chipDrone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:text="Drone"
+                            android:textSize="14sp"
+                            android:textColor="#1C2B4A"
+                            android:background="@drawable/bg_chip_inactive"
+                            android:gravity="center"
+                            android:paddingHorizontal="20dp"/>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- GRID ITEM -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewExplore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/item_product_grid"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

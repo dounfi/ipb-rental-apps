@@ -1,0 +1,30 @@
+<resources>
+    <style name="Theme.IPBRental" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.IPBRental.Splash" parent="Theme.IPBRental">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/splash_bottom</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertPositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertNegativeButton</item>
+    </style>
+
+    <style name="AlertPositiveButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">#EF4444</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="AlertNegativeButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">#6B7280</item>
+    </style>
+</resources>
