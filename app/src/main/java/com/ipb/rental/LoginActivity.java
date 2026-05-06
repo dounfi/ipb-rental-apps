@@ -14,7 +14,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private Button btnLogin;
-    private TextView tvError, tvGotoSignUp;
+    private TextView tvError, tvGotoSignUp, tvGotoAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +26,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin    = findViewById(R.id.btn_login);
         tvError     = findViewById(R.id.tv_error);
         tvGotoSignUp = findViewById(R.id.tv_goto_signup);
+        tvGotoAdmin = findViewById(R.id.tv_goto_admin);
 
         btnLogin.setOnClickListener(v -> validateAndLogin());
         tvGotoSignUp.setOnClickListener(v ->
             startActivity(new Intent(LoginActivity.this, SignUpActivity.class))
         );
+        
+        tvGotoAdmin.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void validateAndLogin() {

@@ -26,6 +26,8 @@
         <activity android:name=".HomeActivity" android:exported="false"/>
         <activity android:name=".ExploreActivity" android:exported="false"/>
         <activity android:name=".MainActivity" android:exported="false"/>
+        <activity android:name=".AdminLoginActivity" android:exported="false"/>
+        <activity android:name=".AdminMainActivity" android:exported="false"/>
 
     </application>
 </manifest>

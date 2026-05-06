@@ -25,7 +25,7 @@ public class ExploreActivity extends AppCompatActivity {
         RecyclerView rvExplore = findViewById(R.id.rv_explore);
         rvExplore.setLayoutManager(new GridLayoutManager(this, 2));
 
-        // Data dummy dengan kategori
+        // Data dummy menggunakan objek Item (bukan Product)
         allProducts = new ArrayList<>();
         allProducts.add(new Item("1", "Sony Alpha A7 III", "Fotografi", R.drawable.ic_box, "Tersedia", "4.9", "12", "85.000", "85k", "Bagus", "Deskripsi kamera Sony."));
         allProducts.add(new Item("2", "MacBook Pro 14\"", "Elektronik", R.drawable.ic_box, "Tersedia", "4.8", "8", "120.000", "120k", "Sangat Baik", "Deskripsi MacBook."));
@@ -36,8 +36,9 @@ public class ExploreActivity extends AppCompatActivity {
         allProducts.add(new Item("7", "iPad Pro 11\"", "Elektronik", R.drawable.ic_box, "Tersedia", "4.8", "11", "75.000", "75k", "Bagus", "Deskripsi iPad."));
         allProducts.add(new Item("8", "Raket Badminton", "Lainnya", R.drawable.ic_box, "Tersedia", "4.7", "32", "10.000", "10k", "Baik", "Deskripsi raket."));
 
+        // Perbaikan: Menambahkan listener sebagai argumen kedua
         adapter = new ExploreAdapter(allProducts, item -> {
-            // Handle item click if needed
+            // Navigasi ke detail jika diperlukan
         });
         rvExplore.setAdapter(adapter);
 

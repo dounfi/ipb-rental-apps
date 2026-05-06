@@ -1,5 +1,6 @@
 package com.ipb.rental;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,11 @@ public class ProfileFragment extends Fragment {
                         requireActivity().finish();
                     })
                     .show();
+        });
+
+        binding.menuAdminPanel.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), AdminLoginActivity.class);
+            startActivity(intent);
         });
 
         // Other menu clicks can be added here

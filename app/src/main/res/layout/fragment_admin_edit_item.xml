@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="#D1D5DB" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Informasi Item"
+            android:textColor="#1C2B4A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="Perbarui detail atau status item ini"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="NAMA ITEM"
+            android:textColor="#9CA3AF"
+            android:textSize="10sp"
+            android:textAllCaps="true" />
+
+        <EditText
+            android:id="@+id/etEditName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_input_field"
+            android:padding="12dp"
+            android:textColor="#1C2B4A"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6dp" android:text="KATEGORI" android:textColor="#9CA3AF" android:textSize="10sp" android:textAllCaps="true" />
+                <Spinner android:id="@+id/spEditCategory" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_input_field" />
+            </LinearLayout>
+
+            <View android:layout_width="12dp" android:layout_height="0dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6dp" android:text="HARGA/HARI" android:textColor="#9CA3AF" android:textSize="10sp" android:textAllCaps="true" />
+                <EditText android:id="@+id/etEditPrice" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input_field" android:padding="12dp" android:inputType="number" android:textColor="#1C2B4A" android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6dp" android:text="KONDISI" android:textColor="#9CA3AF" android:textSize="10sp" android:textAllCaps="true" />
+                <Spinner android:id="@+id/spEditCondition" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_input_field" />
+            </LinearLayout>
+
+            <View android:layout_width="12dp" android:layout_height="0dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6dp" android:text="STATUS (ADMIN)" android:textColor="#9CA3AF" android:textSize="10sp" android:textAllCaps="true" />
+                <Spinner android:id="@+id/spEditStatus" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_input_field" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="DESKRIPSI"
+            android:textColor="#9CA3AF"
+            android:textSize="10sp"
+            android:textAllCaps="true" />
+
+        <EditText
+            android:id="@+id/etEditDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_input_field"
+            android:padding="12dp"
+            android:minLines="3"
+            android:gravity="top"
+            android:textColor="#1C2B4A"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnSaveChange"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_chip_active_admin"
+            android:text="Simpan Perubahan"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnCancelEdit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Batal"
+            android:textColor="#6B7280"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

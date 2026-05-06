@@ -2,6 +2,7 @@
 <resources>
     <!-- Background & Surface -->
     <color name="bg_app">#FDF8F4</color>
+    <color name="bg_admin">#F5F0EB</color>
     <color name="white">#FFFFFF</color>
     <color name="light_blue_bg">#F0F7FF</color>
     <color name="glass_white">#B3FFFFFF</color>
@@ -22,6 +23,18 @@
     <color name="text_secondary">#6B7280</color>
     <color name="text_gray_light">#9CA3AF</color>
     <color name="gray_text">#6B7280</color>
+
+    <!-- Admin Dashboard Colors -->
+    <color name="alert_bg">#FEF9EC</color>
+    <color name="alert_stroke">#F59E0B</color>
+    <color name="alert_text">#92400E</color>
+    <color name="success_green">#16A34A</color>
+    <color name="success_bg">#DCFCE7</color>
+    <color name="error_red">#EF4444</color>
+    <color name="error_bg">#FEE2E2</color>
+    <color name="admin_badge_bg">#E8EDF4</color>
+    <color name="chart_bar_gray">#D1D5DB</color>
+    <color name="chart_bar_active">#1C2B4A</color>
 
     <!-- Stats Card 1: Total -->
     <color name="bg_icon_total">#E9EDF0</color>
