@@ -33,6 +33,13 @@ public class ProfileFragment extends Fragment {
                     .commit();
         });
 
+        binding.menuHelpCenter.setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ReportFragment())
+                    .addToBackStack("profile")
+                    .commit();
+        });
+
         binding.btnLogout.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(requireContext())
                     .setTitle("Logout?")

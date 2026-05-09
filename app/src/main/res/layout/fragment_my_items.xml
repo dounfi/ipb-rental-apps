@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F0EB">
+    android:background="#F8F9FA">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -19,276 +19,314 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
-            <!-- TOOLBAR ROW -->
-            <LinearLayout
+            <!-- FEATURE 1: HEADER -->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="24dp">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="My Items"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#1C2B4A"/>
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true">
 
-                <ImageButton
-                    android:id="@+id/btnFilter"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/bg_btn_filter"
-                    android:src="@drawable/ic_filter"
-                    app:tint="#1C2B4A"
-                    android:layout_marginEnd="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="My Items"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C2B4A"
+                        android:fontFamily="serif"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kelola item yang kamu daftarkan untuk disewakan"
+                        android:textSize="12sp"
+                        android:textColor="#9CA3AF"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
 
                 <ImageButton
                     android:id="@+id/btnAddItem"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/bg_btn_add"
                     android:src="@drawable/ic_add"
-                    app:tint="@color/white"/>
+                    app:tint="@color/white"
+                    android:elevation="2dp"
+                    android:contentDescription="Tambah Item"/>
+            </RelativeLayout>
 
-            </LinearLayout>
-
-            <!-- GRID STATISTIK -->
-            <GridLayout
+            <!-- FEATURE 2: STATS ROW (4 cards) -->
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:useDefaultMargins="false"
+                android:scrollbars="none"
                 android:layout_marginBottom="24dp">
 
-                <!-- Card 1 Total -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginBottom="12dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp">
+                    android:orientation="horizontal">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
+                    <!-- Card 1: Total Item -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:id="@+id/ivIconTotal"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:background="@drawable/bg_stats_icon"
-                            android:backgroundTint="@color/bg_icon_total"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_items"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/text_total_label" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_badge"
-                            android:backgroundTint="@color/bg_badge_total"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="Total"
-                            android:textColor="@color/text_total_label"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/ivIconTotal"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/ivIconTotal" />
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/ic_items"
+                                android:background="@drawable/bg_stats_icon"
+                                android:backgroundTint="#F0F7FF"
+                                android:padding="6dp"
+                                app:tint="#1C2B4A"
+                                android:contentDescription="Total Icon"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp">
+                                <TextView
+                                    android:id="@+id/tvTotalCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textStyle="bold"
+                                    android:textColor="#1C2B4A"
+                                    android:textSize="16sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total Item"
+                                    android:textSize="10sp"
+                                    android:textColor="#9CA3AF"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/tvTotalCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:fontFamily="serif"
-                            android:text="4"
-                            android:textColor="#1C2B4A"
-                            android:textSize="24sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/ivIconTotal" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Total Item"
-                            android:textColor="#9CA3AF"
-                            android:textSize="11sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvTotalCount" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Card 2 Aktif/Tersedia -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginBottom="12dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
+                    <!-- Card 2: Tersedia -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:id="@+id/ivIconAktif"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:background="@drawable/bg_stats_icon"
-                            android:backgroundTint="@color/bg_icon_aktif"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_check_circle"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/text_aktif" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_badge"
-                            android:backgroundTint="@color/bg_badge_aktif"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="Aktif"
-                            android:textColor="@color/text_aktif"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/ivIconAktif"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/ivIconAktif" />
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/ic_check_circle"
+                                android:background="@drawable/bg_stats_icon"
+                                android:backgroundTint="#E1F5EE"
+                                android:padding="6dp"
+                                app:tint="#0F6E56"
+                                android:contentDescription="Tersedia Icon"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp">
+                                <TextView
+                                    android:id="@+id/tvActiveCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textStyle="bold"
+                                    android:textColor="#0F6E56"
+                                    android:textSize="16sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tersedia"
+                                    android:textSize="10sp"
+                                    android:textColor="#9CA3AF"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/tvActiveCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:fontFamily="serif"
-                            android:text="2"
-                            android:textColor="@color/text_aktif"
-                            android:textSize="24sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/ivIconAktif" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tersedia"
-                            android:textColor="#9CA3AF"
-                            android:textSize="11sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvActiveCount" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Card 3 On-Going / Disewa -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_columnSpan="2"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
+                    <!-- Card 3: Sedang Disewa -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:id="@+id/ivIconOngoing"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:background="@drawable/bg_stats_icon"
-                            android:backgroundTint="@color/bg_icon_ongoing"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_rentals"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/text_ongoing" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_badge"
-                            android:backgroundTint="@color/bg_badge_ongoing"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="On-Going"
-                            android:textColor="@color/text_ongoing"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/ivIconOngoing"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/ivIconOngoing" />
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/ic_rentals"
+                                android:background="@drawable/bg_stats_icon"
+                                android:backgroundTint="#FEF3C7"
+                                android:padding="6dp"
+                                app:tint="#92400E"
+                                android:contentDescription="Disewa Icon"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp">
+                                <TextView
+                                    android:id="@+id/tvOngoingCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textStyle="bold"
+                                    android:textColor="#92400E"
+                                    android:textSize="16sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sedang Disewa"
+                                    android:textSize="10sp"
+                                    android:textColor="#9CA3AF"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:id="@+id/tvOngoingCount"
-                            android:layout_width="wrap_content"
+                    <!-- Card 4: Rating -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:fontFamily="serif"
-                            android:text="1"
-                            android:textColor="@color/text_ongoing"
-                            android:textSize="24sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/ivIconOngoing" />
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/ic_star"
+                                android:background="@drawable/bg_stats_icon"
+                                android:backgroundTint="#FEE2E2"
+                                android:padding="6dp"
+                                app:tint="#EF4444"
+                                android:contentDescription="Rating Icon"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="—"
+                                    android:textStyle="bold"
+                                    android:textColor="#EF4444"
+                                    android:textSize="16sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rating Rerata"
+                                    android:textSize="10sp"
+                                    android:textColor="#9CA3AF"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Disewa"
-                            android:textColor="#9CA3AF"
-                            android:textSize="11sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvOngoingCount" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </GridLayout>
-
-            <!-- SECTION HEADER -->
+            <!-- FEATURE 3: SEARCH + FILTER BAR -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Item Saya"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#1C2B4A"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_search_bar"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="12dp">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_search"
+                            app:tint="#9CA3AF"
+                            android:contentDescription="Search Icon"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Cari item kamu..."
+                            android:textSize="13sp"
+                            android:layout_marginStart="8dp"
+                            android:importantForAutofill="no"
+                            android:inputType="text"/>
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:paddingHorizontal="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_input_rounded"
+                        android:paddingHorizontal="8dp"/>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvItemCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4 item"
-                    android:textSize="13sp"
-                    android:textColor="#9CA3AF"/>
-
+                    android:layout_gravity="end"
+                    android:text="Menampilkan 1 item"
+                    android:textSize="11sp"
+                    android:textColor="#9CA3AF"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
 
             <!-- RECYCLERVIEW -->
@@ -297,12 +335,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-                android:clipToPadding="false"
                 tools:listitem="@layout/item_card"/>
 
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

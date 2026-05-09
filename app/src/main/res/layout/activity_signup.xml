@@ -53,7 +53,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daftar untuk mulai menyewa &amp; menyewakan"
+            android:text="Daftar sebagai mahasiswa kampus terverifikasi"
             android:textColor="@color/gray_text"
             android:textSize="12sp" />
     </LinearLayout>
@@ -121,8 +121,49 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
                     android:background="@android:color/transparent"
-                    android:hint="nama lengkap"
+                    android:hint="Nama sesuai KTM"
                     android:inputType="textPersonName"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- NIM -->
+            <TextView
+                android:id="@+id/tv_label_nim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="NIM"
+                android:textColor="@color/navy_blue"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_nama" />
+
+            <LinearLayout
+                android:id="@+id/ll_nim"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_rounded"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_nim">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_logo_placeholder"
+                    app:tint="@color/gray_text" />
+
+                <EditText
+                    android:id="@+id/et_nim"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="G1401211001"
+                    android:inputType="text"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -137,7 +178,7 @@
                 android:textSize="11sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_nama" />
+                app:layout_constraintTop_toBottomOf="@id/ll_nim" />
 
             <LinearLayout
                 android:id="@+id/ll_email_reg"
@@ -167,6 +208,47 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
+            <!-- WhatsApp -->
+            <TextView
+                android:id="@+id/tv_label_whatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="WHATSAPP"
+                android:textColor="@color/navy_blue"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_email_reg" />
+
+            <LinearLayout
+                android:id="@+id/ll_whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_rounded"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_whatsapp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_phone"
+                    app:tint="@color/gray_text" />
+
+                <EditText
+                    android:id="@+id/et_whatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="08xxxxxxxxxx"
+                    android:inputType="phone"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
             <!-- Password -->
             <TextView
                 android:id="@+id/tv_label_pass_reg"
@@ -178,7 +260,7 @@
                 android:textSize="11sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_email_reg" />
+                app:layout_constraintTop_toBottomOf="@id/ll_whatsapp" />
 
             <LinearLayout
                 android:id="@+id/ll_pass_reg"
@@ -257,48 +339,14 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- KTM Upload Box -->
-            <LinearLayout
-                android:id="@+id/ll_upload_ktm"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/bg_upload_dashed"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/ll_confirm">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_logo_placeholder"
-                    app:tint="@color/navy_blue" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Unggah KTM untuk verifikasi"
-                    android:textColor="@color/navy_blue"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Verifikasi maksimal 1x24 jam"
-                    android:textColor="@color/gray_text"
-                    android:textSize="11sp" />
-            </LinearLayout>
-
             <!-- Checkbox Terms -->
             <LinearLayout
                 android:id="@+id/ll_terms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/ll_upload_ktm">
+                app:layout_constraintTop_toBottomOf="@id/ll_confirm">
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -332,7 +380,7 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/state_btn_primary"
-                android:text="Daftar Sekarang"
+                android:text="Buat Akun"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -359,7 +407,7 @@
                     android:id="@+id/tv_goto_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masuk di sini"
+                    android:text="Masuk"
                     android:textColor="@color/navy_blue"
                     android:textSize="14sp"
                     android:textStyle="bold" />

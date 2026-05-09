@@ -18,9 +18,14 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.btn_add_item).setOnClickListener(v -> {
-            AddItemBottomSheetFragment bottomSheet = new AddItemBottomSheetFragment();
-            bottomSheet.show(getParentFragmentManager(), "AddItemBottomSheet");
-        });
+
+        // Option 1: Null check for btn_add_item to prevent crash
+        View btnAddItem = view.findViewById(R.id.btn_add_item);
+        if (btnAddItem != null) {
+            btnAddItem.setOnClickListener(v -> {
+                AddItemBottomSheetFragment bottomSheet = new AddItemBottomSheetFragment();
+                bottomSheet.show(getParentFragmentManager(), "AddItemBottomSheet");
+            });
+        }
     }
 }

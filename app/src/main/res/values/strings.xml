@@ -1,10 +1,29 @@
 <resources>
     <string name="app_name">IPB.Rental</string>
-    <string name="tagline">Kampus berbagi, semua tersedia</string>
-    <string name="ob1_title">Sewa Apa Saja\ndi Kampus IPB 🎓</string>
-    <string name="ob1_desc">Kamera, laptop, alat olahraga, proyektor, dan ratusan item keren dari sesama mahasiswa IPB tersedia untukmu!</string>
-    <string name="ob2_title">Aman &amp;\nTerpercaya 🔒</string>
-    <string name="ob2_desc">Semua pengguna diverifikasi mahasiswa IPB. Deposit tersimpan aman sampai transaksi benar-benar selesai.</string>
-    <string name="ob3_title">Chat, Negosiasi,\ndan Sepakat 💬</string>
-    <string name="ob3_desc">Hubungi pemilik langsung, negosiasi harga, dan selesaikan transaksi dalam satu platform yang mudah.</string>
+    <string name="ipb_rental">IPB.Rental</string>
+    <string name="hi_user">Hi, Erisa 👋</string>
+    <string name="ready_to_rent">Siap menyewa hari ini?</string>
+    <string name="search_hint">Cari kamera, laptop, proyektor...</string>
+    <string name="category_semua">Semua</string>
+    <string name="category_elektronik">Elektronik</string>
+    <string name="category_fotografi">Fotografi</string>
+    <string name="category_audio">Audio</string>
+    <string name="category_drone">Drone</string>
+    <string name="category_akademik">Akademik</string>
+    <string name="item_unggulan">ITEM UNGGULAN</string>
+    <string name="sort_popular">Urutkan: Terpopuler</string>
+    <string name="rekomendasi_title">REKOMENDASI UNTUK ANDA</string>
+    <string name="atur_preferensi">+ Atur Preferensi</string>
+    <string name="empty_recommendation">Belum ada rekomendasi — <u>lengkapi lokasi &amp; preferensi</u> kamu di profil.</string>
+    <string name="showing_items">Menampilkan 2 item</string>
+    <string name="btn_add_item_text">+ Tambah Barang</string>
+
+    <string-array name="report_categories">
+        <item>Pilih Kategori</item>
+        <item>Penipuan</item>
+        <item>Kerusakan Barang</item>
+        <item>Keterlambatan</item>
+        <item>Masalah Akun</item>
+        <item>Lainnya</item>
+    </string-array>
 </resources>

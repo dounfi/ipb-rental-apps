@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText etName, etEmail, etPassword, etConfirmPassword;
+    private EditText etName, etNim, etEmail, etWhatsapp, etPassword, etConfirmPassword;
     private Button btnSignUp;
     private TextView tvError, tvBack, tvGotoLogin;
 
@@ -22,7 +22,9 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         etName            = findViewById(R.id.et_name);
+        etNim             = findViewById(R.id.et_nim);
         etEmail           = findViewById(R.id.et_email);
+        etWhatsapp        = findViewById(R.id.et_whatsapp);
         etPassword        = findViewById(R.id.et_password);
         etConfirmPassword = findViewById(R.id.et_confirm_password);
         btnSignUp         = findViewById(R.id.btn_signup);
@@ -37,16 +39,25 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void validateAndRegister() {
         String name     = etName.getText().toString().trim();
+        String nim      = etNim.getText().toString().trim();
         String email    = etEmail.getText().toString().trim();
+        String whatsapp = etWhatsapp.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
         String confirm  = etConfirmPassword.getText().toString().trim();
+        
         tvError.setVisibility(View.GONE);
 
         if (TextUtils.isEmpty(name)) {
             showError("Nama tidak boleh kosong"); return;
         }
+        if (TextUtils.isEmpty(nim)) {
+            showError("NIM tidak boleh kosong"); return;
+        }
         if (TextUtils.isEmpty(email) || !email.contains("@")) {
             showError("Masukkan email yang valid"); return;
+        }
+        if (TextUtils.isEmpty(whatsapp)) {
+            showError("Nomor WhatsApp tidak boleh kosong"); return;
         }
         if (TextUtils.isEmpty(password) || password.length() < 8) {
             showError("Password minimal 8 karakter"); return;
